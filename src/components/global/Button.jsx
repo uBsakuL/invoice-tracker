@@ -5,6 +5,7 @@ const defaultButtonStyle = {
   borderRadius: "20px",
   border: "0",
   margin: "5px 0",
+  cursor: "pointer",
 };
 
 const Button = ({ onClick, type, style, text, ...rest }) => {

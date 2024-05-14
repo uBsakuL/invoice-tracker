@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-import Dashoard from "./pages/Dashboard";
+import Dashboard from "./pages/Dashboard";
 import RequireAuth from "./components/global/RequireAuth";
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
           path="/dashboard"
           element={
             <RequireAuth>
-              <Dashoard />
+              <Dashboard />
             </RequireAuth>
           }
         />

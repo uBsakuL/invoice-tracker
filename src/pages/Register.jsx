@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import Input from "../components/global/input";
-import Button from "../components/global/button";
+import { Link, useNavigate } from "react-router-dom";
+import Input from "../components/global/Input";
+import Button from "../components/global/Button";
 import { registerStyles } from "../styles/register";
 
 const Register = () => {
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -22,7 +23,10 @@ const Register = () => {
 
     axios
       .post("/register", params)
-      .then((res) => alert(res.data))
+      .then((res) => {
+        alert(res.data);
+        navigate("/login");
+      })
       .catch((err) => alert(err.response.data));
   };
 
@@ -35,16 +39,19 @@ const Register = () => {
       >
         <Input
           placeholder="email"
+          type="text"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <Input
           placeholder="name"
+          type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
         <Input
           placeholder="password"
+          type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />

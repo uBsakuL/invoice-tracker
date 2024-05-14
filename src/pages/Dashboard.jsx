@@ -1,7 +1,8 @@
 import { dashboardPageStyles } from "../styles/dashboard";
 
-const Dashoard = () => {
-  const { main } = dashboardPageStyles;
+const { main } = dashboardPageStyles;
+
+const Dashboard = () => {
   return (
     <div style={main}>
       <h1> Dashboard Page</h1>
@@ -9,4 +10,4 @@ const Dashoard = () => {
   );
 };
 
-export default Dashoard;
+export default Dashboard;
